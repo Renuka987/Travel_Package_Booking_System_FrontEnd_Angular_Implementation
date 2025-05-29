@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-details-of-packages',
+  selector: 'details-of-packages',
   imports: [],
   templateUrl: './details-of-packages.component.html',
   styleUrl: './details-of-packages.component.css'
