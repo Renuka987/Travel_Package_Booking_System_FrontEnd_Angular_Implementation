@@ -1,1 +1,48 @@
-<p>available-packages works!</p>
+<div class="package-container">
+  @for(package of packages; track package.packageId) {
+  <div class="package-card">
+    <h2>{{ package.title }}</h2>
+    <p>{{ package.description }}</p>
+    <p><strong>Duration:</strong> {{ package.duration }} days</p>
+    <p><strong>Price:</strong> ₹{{ package.price }}</p>
+    <p><strong>Included Services:</strong> {{ package.includedServices }}</p>
+    <button routerLink="/booking" class="book-btn">Book Now</button>
+
+  </div>
+  }
+</div>
+<!-- Edit Modal -->
+<div class="modal" [class.show]="selectedPackage">
+  <div class="modal-content">
+      <h3>Edit Package Details</h3>
+      <form *ngIf="selectedPackage" (ngSubmit)="saveChanges()" #editForm="ngForm">
+          <div class="form-group">
+              <label>Title:</label>
+              <input type="text" [(ngModel)]="selectedPackage.title" name="title" required>
+          </div>
+
+          <div class="form-group">
+              <label>Description:</label>
+              <textarea [(ngModel)]="selectedPackage.description" name="description" required></textarea>
+          </div>
+
+          <div class="form-group">
+              <label>Duration (days):</label>
+              <input type="number" [(ngModel)]="selectedPackage.duration" name="duration" required min="1">
+          </div>
+          <div class="form-group">
+            <label>Price (₹):</label>
+            <input type="number" [(ngModel)]="selectedPackage.price" name="price" required min="0">
+        </div>
+
+        <div class="form-group">
+            <label>Included Services:</label>
+            <input type="text" [(ngModel)]="selectedPackage.includedServices" name="includedServices" required>
+        </div>
+
+        <div class="modal-buttons">
+            <button type="submit" class="save-btn" [disabled]="!editForm.valid">Save Changes</button>
+            <button type="button" class="cancel-btn" (click)="closeModal()">Cancel</button>
+        </div>
+    </form>
+</div>

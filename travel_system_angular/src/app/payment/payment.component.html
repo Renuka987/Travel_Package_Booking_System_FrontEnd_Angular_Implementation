@@ -1,1 +1,37 @@
-<p>payment works!</p>
+<div class="payment-wrapper">
+    <div class="payment-card">
+        <h2>Payment Details</h2>
+        
+        <div class="booking-info">
+            <div class="info-item">
+                <span>Amount:</span>
+                <span>₹{{ amount | number:'1.2-2' }}</span>
+            </div>
+            
+            <div class="payment-select">
+                <label>Select Payment Method:</label>
+                <select [(ngModel)]="paymentMethod" class="form-select">
+                    <option value="">Choose payment method</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="Net Banking">Net Banking</option>
+                </select>
+            </div>
+
+            <button (click)="initiatePayment()" class="pay-button">
+                Pay ₹{{ amount }}
+            </button>
+
+            <div *ngIf="paymentSuccess" class="success-message">
+                🎉 Payment Successful! Redirecting...
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

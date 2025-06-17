@@ -1,11 +1,19 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'home',
-  imports: [],
+  selector: 'app-home',
+  imports: [CommonModule,ReactiveFormsModule,RouterLink],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
 
 }
+
+
+
+
+

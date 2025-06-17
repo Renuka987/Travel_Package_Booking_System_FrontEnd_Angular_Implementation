@@ -1,1 +1,163 @@
-<p>registration works!</p>
+
+<div class="container-fluid min-vh-100 py-5 registration-container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-xl-11 col-lg-7">
+            <div class="card registration-card">
+                <div class="row g-0"> 
+                    <!--Left Banner -->
+                    <div class="col-lg-5 d-none d-lg-block registration-banner">
+                        <div class="h-100 d-flex flex-column justify-content-center p-5">
+                            <div class="text-center animate__animated animate__fadeIn">
+                                <div class="brand-logo">
+                                    <i class="fas fa-plane-departure fa-3x mb-4"></i>
+                                </div>
+                                <h2 class="display-7 fw-bold text-white mb-3">Welcome to TravelEase</h2>
+                                <p class="lead text-white-50 mb-5">Begin your journey with us today</p>
+                                <div class="features">
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle me-2"></i>
+                                        <span>Exclusive Travel Deals</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle me-2"></i>
+                                        <span>24/7 Customer Support</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-check-circle me-2"></i>
+                                        <span>Personalized Experience</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Form -->
+                    <div class="col-lg-7">
+                        <div class="card-body p-3">
+                            <div class="text-center mb-3">
+
+                                <div class="logo-container mb-4">
+                                    <div class="logo-circle">
+                                        <i class="fas fa-plane"></i>
+                                    </div>
+                                    <div class="logo-text">
+                                        <span class="logo-title">TravelEase</span>
+                                    </div>
+                                </div>
+
+                                <h3 class="fw-bold mb-2">Create Your Account</h3>
+                                <p class="text-muted">Join our exclusive travel community</p>
+                            </div>
+
+                            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="needs-validation">
+                                <!-- Username Field -->
+                                <div class="form-group mb-4">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <input type="text" 
+                                               class="form-control form-control-lg" 
+                                               formControlName="name"
+                                               placeholder="Username"
+                                               [class.is-invalid]="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="registrationForm.get('name')?.invalid && registrationForm.get('name')?.touched">
+                                        Please enter a username
+                                    </div>
+                                </div>
+
+                                <!-- Email Field -->
+                                <div class="form-group mb-4">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                        <input type="email" 
+                                               class="form-control form-control-lg" 
+                                               formControlName="email"
+                                               placeholder="Email Address"
+                                               [class.is-invalid]="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+                                    </div>
+                                    <div class="invalid-feedback" *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+
+                                <!-- Password Field -->
+                                <div class="form-group mb-4">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-lock"></i>
+                                        </span>
+                                        <input [type]="showPassword ? 'text' : 'password'"
+                                               class="form-control form-control-lg"
+                                               formControlName="password"
+                                               placeholder="Password"
+                                               [class.is-invalid]="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
+                                        <button class="btn btn-light border" type="button" (click)="showPassword = !showPassword">
+                                            <i class="fas" [class.fa-eye]="!showPassword" [class.fa-eye-slash]="showPassword"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Number Field -->
+                                <div class="form-group mb-4">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                        <input type="tel" 
+                                               class="form-control form-control-lg" 
+                                               formControlName="contactNumber"
+                                               placeholder="Contact Number"
+                                               [class.is-invalid]="registrationForm.get('contactNumber')?.invalid && registrationForm.get('contactNumber')?.touched">
+                                    </div>
+                                </div>
+
+                                <!-- Role Selection -->
+                                <div class="form-group mb-5">
+                                    <div class="input-group input-group-lg">
+                                        <span class="input-group-text bg-light">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <input type="text" 
+                                               class="form-control form-control-lg" 
+                                               value="Customer" 
+                                               readonly 
+                                               disabled>
+                                        <input type="hidden" formControlName="roles" value="Customer">
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="d-grid gap-3 mb-4">
+                                    <button type="submit" 
+                                            class="btn btn-primary btn-lg"
+                                            [disabled]="registrationForm.invalid">
+                                        <i class="fas fa-user-plus me-2"></i>Register Now
+                                    </button>
+                                      <!-- Replace the existing reset button with this -->
+<button type="reset" class="btn btn-reset-advanced" (click)="onReset()">
+    <span class="btn-content">
+        <i class="fas fa-undo-alt btn-icon"></i>
+        <span class="btn-text">Reset Form</span>
+    </span>
+    <span class="btn-particles"></span>
+    <span class="btn-blur"></span>
+</button>
+ <!-- Sign In Link -->
+ <div class="text-center">
+    <p class="text-muted mb-0">
+        Already have an account? 
+        <a routerLink="/login" class="text-primary fw-bold ms-1">Sign In</a>
+    </p>
+</div>
+
+
+
+
+
+
+
+                                

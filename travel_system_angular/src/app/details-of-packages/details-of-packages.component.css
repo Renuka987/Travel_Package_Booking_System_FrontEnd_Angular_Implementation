@@ -1,0 +1,193 @@
+/* Container Styles */
+.package-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  min-height: 100vh;
+  background: 
+  url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+
+/* Card Styles */
+.package-card {
+  background: rgb(232, 232, 234);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.package-card h2 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.package-card p {
+  color: #606060;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Button Styles */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.book-btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.book-btn:first-child {
+  background-color: #3498db;
+  color: white;
+}
+
+.book-btn:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Package Button */
+.add-package-container {
+  padding: 2rem;
+  text-align: right;
+}
+
+.add-btn {
+  background: #2ecc71;
+  color: rgb(249, 244, 244);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-btn:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background: #ebedef;
+  border-radius: 15px 15px 0 0;
+  padding: 1.5rem;
+}
+
+.modal-title {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  color: #34495e;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.modal-footer {
+  border-top: 1px solid #e9ecef;
+  padding: 1.5rem;
+}
+
+.btn-secondary {
+  background: #95a5a6;
+  border: none;
+}
+
+.btn-primary {
+  background: #3498db;
+  border: none;
+}
+
+.btn-primary:disabled {
+  background: #bdc3c7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .package-container {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+  }
+
+  .package-card {
+      margin: 1rem 0;
+  }
+
+  .button-group {
+      flex-direction: column;
+  }
+
+  .modal-dialog {
+      margin: 0.5rem;
+  }
+}
+
+/* Price Tag Style */
+
+
+
+
+
+
+
+
+

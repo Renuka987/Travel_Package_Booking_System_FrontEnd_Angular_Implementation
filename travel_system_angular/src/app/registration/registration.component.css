@@ -1,0 +1,231 @@
+
+.registration-container {
+background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+    min-height: 10vh;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+} 
+
+.registration-card {
+    border: none;
+    border-radius: 50px;
+    overflow: hidden;
+    max-width: 1000px;  /* Reduced from default width */
+    margin: 0 auto;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95);
+} 
+
+.registration-banner {
+    background: linear-gradient(45deg, #0953e7 0%, #d01b1b 46%, #f3f1ee 100%);
+    position: relative;
+    padding: 2.5rem;
+
+}
+
+.brand-logo {
+    color: rgb(239, 236, 243);
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    color: rgb(243, 236, 236);
+    margin: 1.2rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.feature-item i {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11, 11, 11, 0);
+    border-radius: 50%;
+    margin-right: 12px;
+    backdrop-filter: blur(5px);
+}
+
+.form-control, .form-select {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    height: 45px;     /* Smaller input height */
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.input-group-text {
+    background: linear-gradient(135deg, #4158D0 0%, #C850C0 100%);
+    color: rgb(243, 236, 236);
+    border: none;
+    padding: 0.5rem 1rem;
+    width: 40px;      /* Fixed width for icons */
+
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #C850C0;
+    box-shadow: 0 0 0 0.25rem rgba(200, 80, 192, 0.1);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #b808c5, #C850C0);
+    border: none;
+    padding: 1rem 2rem;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: linear-gradient(45deg, #3447bf, #b73daf);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(200, 80, 192, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(65, 88, 208, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
+.btn-reset-advanced {
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+    border: none;
+    color: #495057;
+    padding: 1rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-reset-advanced:hover {
+    background: linear-gradient(45deg, #e9ecef, #dee2e6);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Custom validation states */
+.form-control.is-invalid {
+    border-color: #FF6B6B;
+    background-image: none;
+}
+/* .form-group {
+    margin-bottom: 0.8rem; /* Reduced spacing between form elements */
+
+
+/* .btn {
+    padding: 0.5rem 1.5rem; /* Smaller buttons */
+
+
+.form-control.is-valid {
+    border-color: #4ECDC4;
+    background-image: none;
+}
+
+/* Enhanced input group styling */
+.input-group {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Add glassmorphism effect to form */
+.card-body {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+}
+
+/* Enhanced responsive design */
+@media (max-width: 992px) {
+    .registration-card {
+        margin: 1rem;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 1.5rem;  /* Reduced padding */
+
+    }
+    
+    .logo-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .logo-title {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
